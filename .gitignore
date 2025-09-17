@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.env
+.env.*
+.venv/
+venv/
+ENV/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/
+
+# Notebooks
+*.ipynb_checkpoints/
+
+# Build / Dist
+build/
+dist/
+*.egg-info/
+
+# Secrets & keys
+apikeys.txt
+*.key
+*.pem
+
+# Cache
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# Data
+*.csv
+*.parquet
+*.sqlite
+*.db
+
+# Node (if any)
+node_modules/ 
