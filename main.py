@@ -300,7 +300,7 @@ def display_research_results(result):
     
     # Summary tab
     with tab1:
-        st.markdown("### Executive Summary")
+        st.markdown("### Executive Summary") 
         if result.summary and result.summary.strip():
             st.write(result.summary)
         else:
@@ -310,10 +310,14 @@ def display_research_results(result):
         # Key players
         if result.key_players:
             st.markdown("### 🏢 Key Players")
-            cols = st.columns(min(len(result.key_players), 5))
-            for i, player in enumerate(result.key_players):
-                with cols[i]:
-                    st.info(player)
+            max_cols = 5
+            players = result.key_players[:50]
+            for row_start in range(0, len(players), max_cols):
+                row = players[row_start:row_start + max_cols]
+                cols = st.columns(len(row))
+                for i, player in enumerate(row):
+                    with cols[i]:
+                        st.info(player)
     
     # Market Analysis tab
     with tab2:
